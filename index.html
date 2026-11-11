@@ -150,6 +150,11 @@ section{padding-block:clamp(72px,8vw,150px)}
 .pages a[aria-current="page"]{background:var(--ink);color:var(--paper)}
 .pages a[aria-current="page"] .index{color:#ffffff99}
 .date{color:var(--faint)}
+.bar-end{display:flex;align-items:center;gap:var(--space-20)}
+.lang{color:var(--ink);text-decoration:none;padding:6px 14px;border-radius:var(--radius-pill);box-shadow:inset 0 0 0 var(--hairline-strong) var(--line);transition:background .4s var(--slow),color .4s var(--slow)}
+.lang:hover{background:var(--ink);color:var(--paper)}
+.foot-row .lang,.overlay .lang{padding:0;box-shadow:none;text-decoration:underline;text-underline-offset:3px}
+.foot-row .lang:hover,.overlay .lang:hover{background:none;color:var(--ink)}
 .prog{position:absolute;left:0;bottom:0;height:1px;background:var(--ink);width:0;z-index:1}
 .menu-btn{display:none;position:relative;align-items:center;justify-content:center;width:110px;height:42px;color:var(--ink);background:transparent;border:0;font:inherit;cursor:pointer}
 .menu-btn::after{content:"";position:absolute;inset:0;border-top:var(--hairline) solid var(--ink);border-bottom:var(--hairline) solid var(--ink)}
@@ -397,10 +402,10 @@ details.more[open] summary .arr{transform:rotate(180deg)}
 .swot h3 .index{color:var(--faint)}
 .swot ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-10)}
 .swot li{display:grid;grid-template-columns:22px minmax(0,1fr);color:var(--ink-soft)}
-.swot li::before{content:"↗";color:var(--faint);font-weight:300}
+
 .swot li b{color:var(--ink)}
 .swot .lit{background:radial-gradient(70% 90% at 100% 100%,color-mix(in srgb,var(--blush) 55%,transparent),transparent 70%)}
-.swot .lit li::before{color:var(--rust)}
+
 
 /* playbook: direction */
 .bets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-24)}
@@ -505,7 +510,7 @@ details.more[open] summary .arr{transform:rotate(180deg)}
 .links{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-10)}
 .links a{color:var(--ink-soft);text-decoration:none;display:inline-flex;gap:var(--space-10);transition:color .4s}
 .links a:hover{color:var(--ink)}
-.links a::after{content:"↗";color:var(--faint);font-weight:300}
+
 .links li{color:var(--ink-soft)}
 .need{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-24)}
 .need li{display:flex;flex-direction:column;gap:var(--space-14);padding-top:var(--space-20);border-top:var(--hairline) solid var(--ink)}
@@ -524,6 +529,8 @@ details.more[open] summary .arr{transform:rotate(180deg)}
 .next:hover .n-word{background-size:100% 2px}
 .foot-row{display:flex;justify-content:space-between;gap:var(--space-24);flex-wrap:wrap;padding-block:var(--space-20);color:var(--ink-soft)}
 .foot-row a{text-decoration:none;color:inherit}
+.credit-row{display:flex;justify-content:center;padding-block:var(--space-15) var(--space-30);border-top:var(--hairline) solid var(--line);color:var(--ink-soft);text-align:center}
+.credit-row b{color:var(--ink);font-weight:600}
 .foot-mark{font-size:clamp(90px,23vw,420px);line-height:.78;font-weight:400;letter-spacing:-.07em;white-space:nowrap;margin-bottom:-.06em;text-align:center}
 .foot-mark sup{font-size:.25em;vertical-align:top;letter-spacing:0}
 
@@ -749,6 +756,10 @@ details.more[open] summary .arr{transform:rotate(180deg)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+svg.ar{display:inline-block;width:1em;height:1em;vertical-align:-.12em;overflow:visible}
+.links a::after{content:"";display:inline-block;flex:none;width:.75em;height:.75em;align-self:center;background:var(--faint);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18L18 6M8.5 6H18v9.5' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18L18 6M8.5 6H18v9.5' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.swot li::before{content:"";display:block;width:.8em;height:.8em;margin-top:.5em;background:var(--faint);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18L18 6M8.5 6H18v9.5' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18L18 6M8.5 6H18v9.5' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.swot .lit li::before{background:var(--rust)}
 </style>
 </head>
 <body>
@@ -764,7 +775,7 @@ details.more[open] summary .arr{transform:rotate(180deg)}
       <a href="#playbook" data-page="playbook"><span class="index">05</span>Playbook</a>
       <a href="#notes" data-page="notes"><span class="index">06</span>Notes</a>
     </nav>
-    <span class="tag date">data 29.10.2026</span>
+    <div class="bar-end"><span class="tag date">data 29.10.2026</span><a class="lang tag" href="fa/index.html" lang="fa" hreflang="fa">فارسی</a></div>
     <button class="menu-btn body" id="menuBtn" type="button" aria-expanded="false" aria-controls="overlay">menu</button>
   </div>
   <div class="prog" id="prog" aria-hidden="true"></div>
@@ -780,7 +791,7 @@ details.more[open] summary .arr{transform:rotate(180deg)}
     <li><a href="#playbook"><span class="index">05</span>Playbook</a></li>
     <li><a href="#notes"><span class="index">06</span>Notes</a></li>
   </ol>
-  <p class="sub tag">Laramob, upholstery fabric since 1373 (1994) · competitive analysis and playbook · data collected 29.10.2026</p>
+  <p class="sub tag">Laramob, upholstery fabric since 1373 (1994) · competitive analysis and playbook · data collected 29.10.2026 · <a class="lang" href="fa/index.html" lang="fa" hreflang="fa">فارسی</a></p>
 </div>
 
 <div class="curtain" id="curtain" aria-hidden="true">
@@ -807,8 +818,8 @@ details.more[open] summary .arr{transform:rotate(180deg)}
     <div class="hero-foot fade-in" style="--d:2">
       <p class="lead"><b>A brand people know, with products they can't find.</b> This site maps who sells upholstery fabric in Iran and beyond, who wins Google and Instagram, what laramob.com does today, and what Laramob can do next. Every number is dated and sourced.</p>
       <div class="btns body">
-        <a class="ny-btn" href="#market">read the analysis <span class="ny-arrow" aria-hidden="true">↗</span></a>
-        <a class="ny-btn" href="#playbook">open the playbook <span class="ny-arrow" aria-hidden="true">↗</span></a>
+        <a class="ny-btn" href="#market">read the analysis <span class="ny-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="ny-btn" href="#playbook">open the playbook <span class="ny-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </div>
     </div>
   </div>
@@ -898,37 +909,37 @@ details.more[open] summary .arr{transform:rotate(180deg)}
     </div>
     <div class="doors">
       <a class="door" href="#market">
-        <div class="d-top"><span class="index">01</span><span class="d-arrow" aria-hidden="true">↗</span></div>
+        <div class="d-top"><span class="index">01</span><span class="d-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         <span class="d-title">Market</span>
         <p class="body-light">How fabric reaches buyers in Iran: the bazaars, the mills and imports, the rial, payment habits, platforms and messaging. Then the global market, its size and its players.</p>
         <div class="ny-chips tag"><span class="ny-chip">bazaars</span><span class="ny-chip">supply</span><span class="ny-chip">payment</span><span class="ny-chip">platforms</span><span class="ny-chip">world</span></div>
       </a>
       <a class="door" href="#search">
-        <div class="d-top"><span class="index">02</span><span class="d-arrow" aria-hidden="true">↗</span></div>
+        <div class="d-top"><span class="index">02</span><span class="d-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         <span class="d-title">Search</span>
         <p class="body-light">Who owns Google in Iran on 14 Persian searches: the heatmap, the top three per search and all 254 results, rank by rank.</p>
         <div class="ny-chips tag"><span class="ny-chip">heatmap</span><span class="ny-chip">top three</span><span class="ny-chip">all results</span></div>
       </a>
       <a class="door" href="#competitors">
-        <div class="d-top"><span class="index">03</span><span class="d-arrow" aria-hidden="true">↗</span></div>
+        <div class="d-top"><span class="index">03</span><span class="d-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         <span class="d-title">Competitors</span>
         <p class="body-light">Fifteen players compared, six profiled in depth, their promises, audiences, positions and prices, and the global editors.</p>
         <div class="ny-chips tag"><span class="ny-chip">profiles</span><span class="ny-chip">instagram</span><span class="ny-chip">prices</span><span class="ny-chip">global</span></div>
       </a>
       <a class="door" href="#laramob">
-        <div class="d-top"><span class="index">04</span><span class="d-arrow" aria-hidden="true">↗</span></div>
+        <div class="d-top"><span class="index">04</span><span class="d-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         <span class="d-title">Laramob</span>
         <p class="body-light">laramob.com as it stands: catalogue, stores and channels, the pages, the buying path step by step, search and technical state, best practices and the SWOT.</p>
         <div class="ny-chips tag"><span class="ny-chip">catalogue</span><span class="ny-chip">buying path</span><span class="ny-chip">seo</span><span class="ny-chip">swot</span></div>
       </a>
       <a class="door" href="#playbook">
-        <div class="d-top"><span class="index">05</span><span class="d-arrow" aria-hidden="true">↗</span></div>
+        <div class="d-top"><span class="index">05</span><span class="d-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         <span class="d-title">Playbook</span>
         <p class="body-light">A direction and three bets, the groundwork, activations for six channels, seven campaign ideas, priorities, a 180-day roadmap and the numbers to watch.</p>
         <div class="ny-chips tag"><span class="ny-chip">direction</span><span class="ny-chip">campaigns</span><span class="ny-chip">roadmap</span></div>
       </a>
       <a class="door" href="#notes">
-        <div class="d-top"><span class="index">06</span><span class="d-arrow" aria-hidden="true">↗</span></div>
+        <div class="d-top"><span class="index">06</span><span class="d-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         <span class="d-title">Notes</span>
         <p class="body-light">Open questions for Laramob, what is needed to start, the method and its limits, a glossary of Persian terms and every source.</p>
         <div class="ny-chips tag"><span class="ny-chip">questions</span><span class="ny-chip">method</span><span class="ny-chip">sources</span></div>
@@ -2333,11 +2344,11 @@ details.more[open] summary .arr{transform:rotate(180deg)}
       <p class="lead">Five strategic answers only Laramob can give, each of which changes what the first moves look like, followed by eight practical questions raised by the site audit.</p>
     </div>
     <div class="rows">
-      <div class="ny-faq rv"><span class="index">01</span><div><p class="lead q">Is Galerie Mokabber part of the same group?</p><p class="ny-faq-answer body-light">mokabber.com reuses Laramob's presentation text almost word for word, and laramob.com's footer reads <span class="fa">پارچه مبلی لارامب (مکبر)</span>. If the two are linked, Mokabber (3rd on “Turkish fabric”) is a relay, not a rival.</p></div><button type="button" aria-expanded="true" aria-label="Close answer">↓</button></div>
-      <div class="ny-faq rv"><span class="index">02</span><div><p class="lead q">Do trade and household prices differ today?</p><p class="ny-faq-answer body-light" hidden>The answer decides between one public price list and a split model with trade prices behind a verified account, and whether a dated price of the day can be published despite the rial.</p></div><button type="button" aria-expanded="false" aria-label="Open answer">↓</button></div>
-      <div class="ny-faq rv"><span class="index">03</span><div><p class="lead q">Can the catalogue be exported as one file?</p><p class="ny-faq-answer body-light" hidden>The 3,785 products and their photos are needed as a structured file for Torob, for the nine search pages and for complete product pages.</p></div><button type="button" aria-expanded="false" aria-label="Open answer">↓</button></div>
-      <div class="ny-faq rv"><span class="index">04</span><div><p class="lead q">Who comes first, households or the trade?</p><p class="ny-faq-answer body-light" hidden>The playbook serves both. The answer decides whether bet two (prices, samples, payment) or bet three (trade accounts) starts first.</p></div><button type="button" aria-expanded="false" aria-label="Open answer">↓</button></div>
-      <div class="ny-faq rv"><span class="index">05</span><div><p class="lead q">Who runs the channels each week?</p><p class="ny-faq-answer body-light" hidden>The roadmap assumes one person owns the order desk, the Instagram-to-product links and the weekly content from month one. Without that owner, campaigns stall.</p></div><button type="button" aria-expanded="false" aria-label="Open answer">↓</button></div>
+      <div class="ny-faq rv"><span class="index">01</span><div><p class="lead q">Is Galerie Mokabber part of the same group?</p><p class="ny-faq-answer body-light">mokabber.com reuses Laramob's presentation text almost word for word, and laramob.com's footer reads <span class="fa">پارچه مبلی لارامب (مکبر)</span>. If the two are linked, Mokabber (3rd on “Turkish fabric”) is a relay, not a rival.</p></div><button type="button" aria-expanded="true" aria-label="Close answer"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16M5.5 13.5L12 20l6.5-6.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <div class="ny-faq rv"><span class="index">02</span><div><p class="lead q">Do trade and household prices differ today?</p><p class="ny-faq-answer body-light" hidden>The answer decides between one public price list and a split model with trade prices behind a verified account, and whether a dated price of the day can be published despite the rial.</p></div><button type="button" aria-expanded="false" aria-label="Open answer"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16M5.5 13.5L12 20l6.5-6.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <div class="ny-faq rv"><span class="index">03</span><div><p class="lead q">Can the catalogue be exported as one file?</p><p class="ny-faq-answer body-light" hidden>The 3,785 products and their photos are needed as a structured file for Torob, for the nine search pages and for complete product pages.</p></div><button type="button" aria-expanded="false" aria-label="Open answer"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16M5.5 13.5L12 20l6.5-6.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <div class="ny-faq rv"><span class="index">04</span><div><p class="lead q">Who comes first, households or the trade?</p><p class="ny-faq-answer body-light" hidden>The playbook serves both. The answer decides whether bet two (prices, samples, payment) or bet three (trade accounts) starts first.</p></div><button type="button" aria-expanded="false" aria-label="Open answer"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16M5.5 13.5L12 20l6.5-6.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <div class="ny-faq rv"><span class="index">05</span><div><p class="lead q">Who runs the channels each week?</p><p class="ny-faq-answer body-light" hidden>The roadmap assumes one person owns the order desk, the Instagram-to-product links and the weekly content from month one. Without that owner, campaigns stall.</p></div><button type="button" aria-expanded="false" aria-label="Open answer"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16M5.5 13.5L12 20l6.5-6.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
     </div>
     <div class="sub-head rv"><h3>Questions about the site</h3><span class="tag">from the audit of laramob.com</span></div>
     <ul class="checks body-light rv">
@@ -2438,8 +2449,9 @@ details.more[open] summary .arr{transform:rotate(180deg)}
 <footer class="foot wrap" aria-label="Next page">
   <div class="glow g-foot" aria-hidden="true"></div>
   <div class="inner">
-    <a class="next" id="next" href="#market"><span class="tag">next page · <span id="nextIdx">01</span></span><span class="n-title"><span class="n-word" id="nextWord">Market</span><span class="ny-arrow" aria-hidden="true">↗</span></span></a>
-    <div class="foot-row tag"><span>Laramob · competitive landscape &amp; playbook</span><span>google &amp; instagram data 29.10.2026 · site audit 26.10.2026</span><a href="#sources">sources &amp; method ↗</a></div>
+    <a class="next" id="next" href="#market"><span class="tag">next page · <span id="nextIdx">01</span></span><span class="n-title"><span class="n-word" id="nextWord">Market</span><span class="ny-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a>
+    <div class="foot-row tag"><span>Laramob · competitive landscape &amp; playbook</span><span>google &amp; instagram data 29.10.2026 · site audit 26.10.2026</span><a href="#sources">sources &amp; method <span class="ny-arrow" aria-hidden="true"><svg class="ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="lang" href="fa/index.html" lang="fa" hreflang="fa">نسخه فارسی</a></div>
+    <div class="credit-row tag"><span>Designed by <b>Switzer Intelligence</b>, a Swiss company</span></div>
     <div class="foot-mark" aria-hidden="true">Laramob<sup>©</sup></div>
   </div>
 </footer>
@@ -2679,8 +2691,8 @@ details.more[open] summary .arr{transform:rotate(180deg)}
     q(xR - 14, yT + 24, "end", "BIG PROJECTS");
     q(xL + 14, yB - 16, "start", "SMALL TASKS");
     q(xR - 14, yB - 16, "end", "LATER");
-    el("text", {x:xL, y:yT - 22, "class":"t-soft", "font-size":"13.5"}, s, "impact ↑");
-    el("text", {x:xR, y:yB + 30, "text-anchor":"end", "class":"t-soft", "font-size":"13.5"}, s, "effort →");
+    el("text", {x:xL, y:yT - 22, "class":"t-soft", "font-size":"13.5"}, s, "impact ↑\uFE0E");
+    el("text", {x:xR, y:yB + 30, "text-anchor":"end", "class":"t-soft", "font-size":"13.5"}, s, "effort →\uFE0E");
     el("text", {x:xL, y:yB + 30, "class":"t-faint", "font-size":"12.5"}, s, "lower effort");
     el("text", {x:xL - 14, y:yB, "text-anchor":"end", "class":"t-faint", "font-size":"12.5"}, s, "low");
     el("text", {x:xL - 14, y:yT + 10, "text-anchor":"end", "class":"t-faint", "font-size":"12.5"}, s, "high");
@@ -2888,6 +2900,9 @@ details.more[open] summary .arr{transform:rotate(180deg)}
     }
     onScroll();
   }
+
+  /* language switch keeps the current page or chapter */
+  $$("a.lang").forEach(function(a){ a.addEventListener("click", function(){ a.href = a.getAttribute("href").split("#")[0] + location.hash; }); });
 
   go(false);
 })();
